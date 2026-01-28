@@ -6,7 +6,7 @@ const {
   exceptionHandler,
   responseFormat,
 } = require("@/middlewares");
-const taskRouter = require("./src/routes/tasks.route");
+const taskRouter = require("./src/routes/task.route");
 const { apiRateLimiter } = require("./src/middlewares/rateLimiter");
 const { createRateLimiter } = require("./src/middlewares/rateLimiter");
 
