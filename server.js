@@ -29,7 +29,7 @@ app.use(responseFormat);
 app.use("/api", apiRateLimiter);
 
 // Routes
-app.use("/api", taskRouter);
+app.use("/api/tasks", taskRouter);
 
 // Test middlewares
 app.get("/test-success", (req, res) => {
@@ -39,7 +39,7 @@ app.get("/test-error", (req, res) => {
   throw Error("Test exception");
 });
 
-// Test rate limiter với config nghiêm ngặt hơn (5 requests/phút)
+// Test rate limiter
 const testRateLimiter = createRateLimiter({
   windowMs: 60 * 1000, // 1 phút
   maxRequest: 5, // Chỉ cho phép 5 requests
