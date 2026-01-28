@@ -4,7 +4,7 @@ const findAll = async (req, res) => {
   try {
     const [tasks] = await model.findAll();
     if (tasks.length === 0) {
-      res.error(404, "Tasks not found");
+      return res.error(404, "Tasks not found");
     }
     res.success(tasks);
   } catch (error) {

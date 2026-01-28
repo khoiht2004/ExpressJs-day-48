@@ -43,7 +43,7 @@ function createRateLimiter({ windowMs, maxRequest, message }) {
     }
 
     // Vẫn còn trong cửa sổ thời gian, kiểm tra đã vượt quá giới hạn chưa
-    if (requests[ip].count >= maxRequest) {
+    if (requests[ip].count > maxRequest) {
       // Đã vượt quá số lượng request cho phép
       // Trả về lỗi 429 (Too Many Requests) với thông báo tùy chỉnh
       return res.error(429, message);
